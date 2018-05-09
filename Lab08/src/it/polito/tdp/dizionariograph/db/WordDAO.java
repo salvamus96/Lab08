@@ -14,7 +14,7 @@ public class WordDAO {
 	 */
 	public List<String> getAllWordsFixedLength(int length) {
 
-		String sql = "SELECT nome FROM parola WHERE LENGTH(nome) = ?;";
+		String sql = "SELECT nome FROM parola WHERE LENGTH(nome) = ?";
 		List<String> parole = new ArrayList<String>();
 
 		try {
