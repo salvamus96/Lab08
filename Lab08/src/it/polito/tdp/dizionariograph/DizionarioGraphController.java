@@ -110,7 +110,7 @@ public class DizionarioGraphController {
         	
     	}catch (NumberFormatException e) {
     		this.txtResult.appendText("Inserire un numero per determinare il numero "+
-    									"delle lettere delle parole da cercare!");
+    								"delle lettere delle parole da cercare!");
     	}
 
     }
