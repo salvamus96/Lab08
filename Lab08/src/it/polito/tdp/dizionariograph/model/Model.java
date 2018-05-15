@@ -34,14 +34,19 @@ public class Model {
 		// aggiungo i collegamenti ai vertici: solo le parole simili
 		for (String s : parole)
 			for (String p : this.getAllSimiliarWord(s))
-				Graphs.addEdgeWithVertices(this.graph, s, p);
-	
+				
+// usando il DATABASE (operazione più lenta poichè invoco una query per ogni parola-vertice)	
+		// for (String p : this.dao.getAllSimiliarWord(s, numeroLettere);
+				//Graphs.addEdgeWithVertices(this.graph, s, p);
+				this.graph.addEdge(s, p);
+				
 		return graph;
 	}
 	
 	private Set<String> getAllSimiliarWord(String parola) {
 		Set <String> similarWord = new HashSet <> ();
 		
+		// lavoro solo con le parole con dimensione numeroLettere
 		for (String s : parole) {
 			// evito di considerare i cappi e di ripetere 
 			//il ciclo sulla stessa coppia di parole
